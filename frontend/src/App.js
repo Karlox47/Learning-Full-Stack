@@ -15,28 +15,40 @@ function App() {
   ];
 
   return (
-  <div>
-    <div className="container" style={{ backgroundImage: `url(${backgroundImage})` }}>
-      <h1 className="header">Left 4 Dead 2</h1>
-      <div className="content">
-        <p className="message">¡Bienvenido a la página de Left 4 Dead 2!</p>
+    <div>
+      {/* Menú */}
+      <div className="menu">
+        <ul>
+          <li>Inicio</li>
+          <li>Juegos</li>
+          <li>Noticias</li>
+          <li>Foros</li>
+          <li>Eventos</li>
+          <li>Contacto</li>
+        </ul>
       </div>
-    </div>
-    <div className="card-container">
-      {cardsData.map(card => (
-        <div key={card.id} className="card">
-          <div className="card-content">
-            <img src={card.image} alt={`Imagen ${card.id}`} />
-            <div className="overlay">
-              <h2 className="title">{card.title}</h2>
-              <p className="content">{card.content}</p>
+      {/* Contenido principal */}
+      <div className="container" style={{ backgroundImage: `url(${backgroundImage})` }}>
+        <h1 className="header">Left 4 Dead 2</h1>
+        <div className="content">
+          <p className="message">¡Bienvenido a la página de Left 4 Dead 2!</p>
+        </div>
+      </div>
+      <div className="card-container">
+        {cardsData.map(card => (
+          <div key={card.id} className="card">
+            <div className="card-content">
+              <img src={card.image} alt={`Imagen ${card.id}`} />
+              <div className="overlay">
+                <h2 className="title">{card.title}</h2>
+                <p className="content">{card.content}</p>
+              </div>
             </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
-  </div>
-);
+  );
 }
 
 export default App;
